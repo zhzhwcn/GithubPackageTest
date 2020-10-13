@@ -23,6 +23,8 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Pack
+      run: dotnet pack --configuration Release --output .
     - name: Publish
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       with:
